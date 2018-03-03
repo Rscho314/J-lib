@@ -1,8 +1,8 @@
 NB. Column index of data y by name x
-colIdxByName =: (I.@((0{])=(<@[)))
+colIdxByName =: (({.@])i.<@[)
 
 NB. Select a column in data y by index x
-colByIdx =: (]@{(|:@[))
+colByIdx =: (]@{(|:@}.@[))
 
 NB. Select a column in data by name
-colByName =: ((I.@((0{])=(<@[))){(|:@}.@]))
+colByName =: (([colIdxByName]) colByIdx])
